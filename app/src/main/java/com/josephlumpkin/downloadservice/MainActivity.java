@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.josephlumpkin.downloadservice.download.DownloadService;
 
@@ -21,11 +22,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickDebug(View view) {
-        Intent intent = new Intent();
-        intent.setAction(DownloadService.ACTION_DOWNLOAD_APK);
-        intent.putExtra("url", "https://www.website.com/hulu.apk");
-        //intent.setAction(DownloadService.ACTION_DOWNLOAD_MOVIE);
-        //intent.putExtra("url", "https://www.website.com/KodiakIsland720p.mp4");
-        this.sendBroadcast(intent);
+        Toast.makeText(
+                this,
+                getResources().getString(R.string.toast_download),
+                Toast.LENGTH_LONG
+        ).show();
+        // Here is an example call to the service below via a broadcast
+        //Intent intent = new Intent();
+        //intent.setAction(DownloadService.ACTION_DOWNLOAD_APK);
+        //intent.putExtra("url", "https://www.samepl-website.com/apkfile.apk");
+        //this.sendBroadcast(intent);
     }
 }

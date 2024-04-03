@@ -69,7 +69,7 @@ public class DownloadService extends Service {
     public static final String ACTION_REMOVE_MOVIE = "com.josephlumpkin.downloadservice.REMOVE_MOVIE";
 
     /** Broadcast receiver to listen for resource handle requests and pass them along. */
-    private final BroadcastReceiver mInstallerReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver mResourceRequestReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             // If there is no internet connection
@@ -127,14 +127,14 @@ public class DownloadService extends Service {
         filter.addAction(ACTION_DOWNLOAD_MOVIE);
         filter.addAction(ACTION_REMOVE_MOVIE);
         // Register the receiver
-        registerReceiver(mInstallerReceiver, filter);
+        registerReceiver(mResourceRequestReceiver, filter);
         super.onCreate();
     }
 
     @Override
     public void onDestroy() {
         mDownloadHandler.removeCallbacksAndMessages(null);
-        unregisterReceiver(mInstallerReceiver);
+        unregisterReceiver(mResourceRequestReceiver);
         super.onDestroy();
     }
 

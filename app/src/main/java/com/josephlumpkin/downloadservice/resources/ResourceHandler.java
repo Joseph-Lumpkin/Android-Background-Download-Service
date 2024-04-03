@@ -12,27 +12,6 @@ public interface ResourceHandler {
      */
     void remove();
 
-    ///**
-    // * Determine whether an update is available for this resource.
-    // *
-    // * @return true if there is an update available for this resource.
-    // */
-    //boolean updateAvailable();
-
-    ///**
-    // * Determine whether an update is required for usage of this resource.
-    // *
-    // * @return true if there is an update required for this resource.
-    // */
-    //boolean updateRequired();
-
-    ///**
-    // * Get the current version of this resource on the system.
-    // *
-    // * @return this resource's current version.
-    // */
-    //long getCurrentVersion();
-
     /**
      * Get the resource name.
      *
@@ -61,4 +40,25 @@ public interface ResourceHandler {
      */
     boolean isValidFileType();
 
+    //TODO implement if use cases arise
+    ///**
+    // * Determine whether an update is available for this resource.
+    // *
+    // * @return true if there is an update available for this resource.
+    // */
+    //boolean updateAvailable();
+
+    ///**
+    // * Determine whether an update is required for usage of this resource.
+    // *
+    // * @return true if there is an update required for this resource.
+    // */
+    //boolean updateRequired();
+
+    ///**
+    // * Get the current version of this resource on the system.
+    // *
+    // * @return this resource's current version.
+    // */
+    //long getCurrentVersion();
 }

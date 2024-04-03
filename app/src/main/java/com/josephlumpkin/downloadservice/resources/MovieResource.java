@@ -49,6 +49,21 @@ public class MovieResource extends Resource {
         }
     }
 
+    /**
+     * @inheritDoc
+     *
+     * Get the root long term storage directory of this movie resource.
+     *
+     * @return The absolute path of this resource object.
+     */
+    @Override
+    public String getSaveDirectory() {
+        File moviesDir =
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES);
+        return moviesDir.getPath() + "/";
+    }
+
+    //TODO
     ///**
     // * @inheritDoc
     // *
@@ -71,21 +86,6 @@ public class MovieResource extends Resource {
 
     //@Override
     //public long getCurrentVersion() {
-    //    //TODO get the current version of this movie resource from shared preferences
     //    return 0;
     //}
-
-    /**
-     * @inheritDoc
-     *
-     * Get the root long term storage directory of this movie resource.
-     *
-     * @return The absolute path of this resource object.
-     */
-    @Override
-    public String getSaveDirectory() {
-        File moviesDir =
-                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES);
-        return moviesDir.getPath() + "/";
-    }
 }
