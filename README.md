@@ -4,7 +4,7 @@ A background download service for Android devices.
 
 This application demonstrates the usage of Android and Object Oriented
 Programming core concepts and design patterns to create a flexible background
-download service.
+download and resource management service.
 
 This service is capable of supporting many more file types. Each of them with
 custom handlers for downloading, removing, and providing other helper functions
